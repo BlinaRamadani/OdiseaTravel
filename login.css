@@ -1,0 +1,408 @@
+
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700&subset=latin-ext');
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E4E0E1; 
+    color: #493628; 
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #493628; 
+    padding: 16px 32px;
+    color: #E4E0E1; 
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #E4E0E1; 
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #E4E0E1; 
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #AB886D; 
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #D6C0B3; 
+    border-radius: 4px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    background-color: #AB886D; 
+    color: #E4E0E1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #D6C0B3; 
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #D6C0B3; 
+    border-radius: 4px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    background-color: #AB886D; 
+    color: #E4E0E1; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #D6C0B3; 
+}
+
+.search-container {
+    position: relative;
+    width: 200px; 
+}
+.search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1.5px solid #007BFF;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+.search-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.search-button img {
+    width: 16px; 
+    height: 16px;
+}
+.results {
+    margin-top: 4px;
+    width: 100%;
+    background: white;
+    padding: 6px;
+    border-radius: 8px;
+    display: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 10;
+    font-size: 13px;
+}
+.result-item {
+    padding: 4px;
+    border-bottom: 1px solid #ddd;
+}
+.result-item:last-child {
+    border-bottom: none;
+}
+.no-results {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px;
+}
+
+
+
+
+
+body {
+    background: url('img/74.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.sign-panels {
+    width: 650px;
+    
+    padding: 40px 80px;
+    margin: 40px auto;
+    border-radius: 20px;
+    text-align: center;
+}
+.login,.signup {
+    position: relative;
+}
+
+
+.title {
+    color: #9f9f9f;
+}
+
+.title span {
+    display: block;
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.title p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn-face,.btn-gmail {
+    color: #fff;
+    display: inline-block;
+    width: 200px;
+    font-size: 20px;
+    height: 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    padding: 11px 0;
+    font-weight: 500;
+}
+
+.btn-face .fa,.btn-gmail .fa {
+    margin-right: 5px;
+}
+
+.btn-face {
+    background: #212b6a;
+    margin-right: 25px;
+}
+
+.btn-gmail {
+    background: #40b9e0;
+}
+
+.or {
+    margin: 35px 0;
+    font-weight: 600;
+    color: #9f9f9f;
+}
+
+.or:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #cecece;
+    position: absolute;
+    margin-top: -10px;
+    z-index: 0;
+}
+
+.or span {
+    display: block;
+    background: #fff;
+    width: 50px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.sign-panels input {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background: #ededed;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    color: #7c7c7c;
+    font-weight: 500;
+}
+
+.sign-panels input:focus {
+    outline:none;
+}
+
+.sign-panels input[type="checkbox"] {
+    display: none;
+}
+
+.sign-panels input[type="checkbox"] + label {
+    display: block;
+    width: 50%;
+    text-align: left;
+    padding-left: 60px;
+    cursor: pointer;
+    color: #828282;
+    font-weight: 500;
+    margin-top: 10px;
+    float: left;
+    height: 50px;
+    padding-top: 15px;
+}
+
+.sign-panels input[type="checkbox"] + label:before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #dbdbdb;
+    position: absolute;
+    left: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 5px #ededed;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.sign-panels input[type="checkbox"]:checked + label:before {
+    background: #FF5722;
+    box-shadow: 0 0 0 5px #FF5722;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.btn-signin {
+    display: inline-block;
+    width: 50%;
+    margin-top: 10px;
+    height: 50px;
+    background: #ec581e;
+    border-radius: 50px;
+    padding: 11px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.btn-reset,.btn-member,.btn-fade {
+    font-size: 19px;
+    font-weight: 500;
+    color: #9f9f9f;
+    display: block;
+    /*width: 210px;*/
+    margin: 30px auto 0;
+    text-decoration: none;
+
+}
+.btn-member {
+    margin-top: 15px;
+}
+
+.btn-reset .fa,.btn-member .fa {
+    margin-left: 6px;
+}
+
+.notification p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #9f9f9f;
+}
+
+.notification span {
+    color: #ec581e;
+}
+
+.error {
+    display: block;
+    color: #ec581e;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .sign-panels {
+        width: 90%;
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .sign-panels {
+        padding: 40px 20px;
+    }
+
+    .btn-face, .btn-twitter {
+        width: 100%;
+    }
+    .btn-face {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sign-panels input[type="checkbox"] + label {
+        width: 100%;
+    }
+
+    .btn-signin {
+        width: 80%;
+    }
+
+    .title span {
+        font-size: 36px;
+    }
+
+}

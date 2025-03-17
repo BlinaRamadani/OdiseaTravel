@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Heaven</title>
+    <title>Odisea Travel</title>
     <link rel="stylesheet" href="AboutUs.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
@@ -20,12 +20,15 @@
                 <li><a href="#">Booking</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
-            <div class="search-bar">
-                <input type="text" placeholder="Search books...">
-                <button>Search</button>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="performSearch()">
+                <button class="search-button" onclick="performSearch()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+                <div id="searchResults" class="results"></div>
             </div>
             <ul class="nav-links">
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
                 <ul class="nav-links">
                 <li><a href="#"><i class="fa-solid fa-plane-departure"></i></a></li>
@@ -143,5 +146,6 @@
             <p>&copy; 2024 Odisea Travel | All rights reserved</p>
         </div>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>

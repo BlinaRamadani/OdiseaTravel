@@ -103,26 +103,70 @@ nav {
     background-color: #D6C0B3; 
 }
 
+.search-container {
+    position: relative;
+    width: 200px; 
+}
+.search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1.5px solid #007BFF;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+.search-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.search-button img {
+    width: 16px; 
+    height: 16px;
+}
+.results {
+    margin-top: 4px;
+    width: 100%;
+    background: white;
+    padding: 6px;
+    border-radius: 8px;
+    display: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 10;
+    font-size: 13px;
+}
+.result-item {
+    padding: 4px;
+    border-bottom: 1px solid #ddd;
+}
+.result-item:last-child {
+    border-bottom: none;
+}
+.no-results {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px;
+}
+
+
 #read-book {
-    background-image: url('img/7.jpg');
+    background-image: url('img/10.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
-    padding: 170px 0;
+    padding: 203px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
-}
-
-#read-book .content {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(0, 0, 0, 0.5); /* Slight transparent background to enhance readability */
-    padding: 30px;
-    border-radius: 10px;
 }
 
 #read-book h5 {
@@ -173,7 +217,7 @@ nav {
     padding: 12px 20px;
     border: none;
     background-color: #AB886D;
-    color: white;
+    color: #493628;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
@@ -182,6 +226,21 @@ nav {
 
 .button button:hover {
     background-color: #D6C0B3;
+}
+
+.btn {
+    background-color: #D6C0B3; 
+    color: #493628; 
+    padding: 12.8px 32px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background- 0.3s;
+}
+
+.btn:hover {
+    background-color: #493628; 
+    color: #E4E0E1; 
 }
 
 .content {
@@ -215,6 +274,123 @@ nav {
     margin-bottom: 10px;
     font-size: 20px;
     color: #493628;
+}
+
+/* Siguro që inputi i datës të ketë të njëjtën madhësi me të tjerët */
+.date-input {
+    width: 100%;
+    height: 40px; /* E njëjta lartësi si inputet e tjera */
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Ngjit tekstin (etiketën) më lart pa ndikuar në hapjen e kalendarit */
+.form-group label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 2px; /* Afrojeni etiketën me inputin */
+    margin-top: -5px; /* Ngjit tekstin më lart pa ndikuar në input */
+}
+
+.search__container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 10px; 
+    
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.input__group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px;
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid #d1c8c8;
+}
+
+.input__group span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #9f9595;
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.input__group input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px;
+    background: transparent;
+    color: #333;
+}
+
+
+
+/* Section styling */
+#categories {
+    text-align: center;
+    padding: 40px 15px;
+    background-color: #74a2d0;
+}
+
+/* Section title */
+#categories h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Grid layout for smaller cards */
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual card styling */
+.category-card {
+    background: rgb(158, 73, 73);
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    max-width: 220px;
+    margin: auto;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Smaller Image */
+.category-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Smaller Text */
+.category-card h3 {
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
 }
 
 

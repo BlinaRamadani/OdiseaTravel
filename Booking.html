@@ -6,7 +6,7 @@
     <title>Odisea Travel</title>
     <link rel="stylesheet" href="Booking.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
 </head>
 <body>
     <header>
@@ -18,15 +18,18 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="book.html">Booking</a></li>
+                <li><a href="#">Booking</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
-            <div class="search-bar">
-                <input type="text" placeholder="Search a place...">
-                <button>Search</button>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="performSearch()">
+                <button class="search-button" onclick="performSearch()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+                <div id="searchResults" class="results"></div>
             </div>
             <ul class="nav-links">
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
             <ul class="nav-links">
                 <li><a href="#"><i class="fa-solid fa-plane-departure"></i></a></li>
@@ -37,7 +40,29 @@
     <section id="read-book">
         <div class="content">
             <h2>Discover the Magic of Rugova Canyon</h2> 
-            <p>Experience the breathtaking beauty and untouched wilderness of Rugova Canyon. </p>   
+            <p>Experience the breathtaking beauty and untouched wilderness of Rugova Canyon. </p> <br><br>
+            <div class="search__container">
+                <div class="input__group">
+                    <span><i class="fa-solid fa-mountain-sun"></i></span>
+                    <input type="text" placeholder="Choose Activity" />
+                </div>
+                <div class="input__group">
+                    <span><i class="fa-solid fa-location-dot"></i></span>
+                    <div class="form-group">
+                        <label for="date"></label>
+                        <input type="date" id="date" class="date-input">
+                    </div>
+                </div>
+                
+                
+                <div class="input__group">
+                    <span><i class="fa-solid fa-user-plus"></i></span><br>
+                    <input type="text" placeholder="Number of person" />
+                </div>
+                <button class="btn">Search</button>
+            </div>
+            
+              
         </div>
     </section>
 
@@ -46,24 +71,38 @@
             <img src="img/6.webp" alt="Rugova Canyon" class="image">
             <div class="content">
                 <h1>Rugova Canyon</h1>
-                <h5>
+                <h4>
                     Rugova, located near Peja, is one of the most beautiful natural destinations in Kosovo. Known for its deep canyons, mysterious caves, and crystal-clear rivers, this area offers excellent opportunities for hiking, rock climbing, and skiing in winter.
                     <br><br>
                     In addition to its stunning nature, Rugova is rich in traditions and warm hospitality, where you can enjoy traditional foods like flija and the famous Rugova cheese. A perfect destination for adventurers and nature lovers!
-                </h5>
-    
+                </h4><br><br>
+                
                 <div class="button">
-                    <button>Flights</button>
-                    <button>Hotels</button>
-                    <button>Car Rentals</button>
-                    <button>Booking</button>
+                    <a href="flights.html" class="btn">Flights</a>
+                    <a href="#" class="btn">Hotels</a>
+                    <a href="#" class="btn">Car Rentals</a>
+                    <a href="book.html" class="btn">Booking</a>
                 </div>
             </div>
         </div>
-    </section>
-    
-    </section>
-    
+        </section>
+
+        <section id="categories">
+            <h2>Popular Categories</h2>
+            <div class="category-cards">
+                <div class="category-card">
+                    <img src="img/77.jpg" alt="Mountain Climbing">
+                    <h3>Mountain Climbing</h3>
+                </div>
+                <div class="category-card">
+                    <img src="img/15.jpg" alt="Zip-lining">
+                    <h3>Zip-lining</h3>
+                </div>
+                <div class="category-card">
+                    <img src="img/14.jpg" alt="Camping">
+                    <h3>Camping</h3>
+                </div>
+        </section>
 
     <footer>
         <div class="footer-content">

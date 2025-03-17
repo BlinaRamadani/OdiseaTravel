@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea Travel</title>
+    <link rel="stylesheet" href="Book.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+
+        <div class="logo">
+            <h1>Odisea Travel</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="book.html">Booking</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="performSearch()">
+                <button class="search-button" onclick="performSearch()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+                <div id="searchResults" class="results"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-plane-departure"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="booking">
+        <h2>Book Your Adventure</h2>
+        <form class="booking-form">
+            <div class="input__group">
+                <label for="activity">Choose Activity:</label>
+                <select id="activity">
+                    <option>Mountain Climbing</option>
+                    <option>Rafting</option>
+                    <option>Visit to the Ruins</option>
+                    <option>Horseback Riding</option>
+                </select>
+            </div>
+            
+            <div class="input__group">
+                <label for="persons">Number of Persons:</label>
+                <input type="number" id="persons" min="1" value="1">
+            </div>
+    
+            <div class="input__group">
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+            </div>
+    
+            <div class="input__group">
+                <label for="guide">Do you need a guide?</label>
+                <select id="guide">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+    
+            <div class="input__group">
+                <label for="transport">Transport:</label>
+                <select id="transport">
+                    <option value="self">I will come myself</option>
+                    <option value="agency">With agency transport</option>
+                </select>
+            </div>
+    
+            <div class="input__group">
+                <label for="payment">Payment Method:</label>
+                <select id="payment">
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cash">Cash</option>
+                </select>
+            </div>
+    
+            <button class="btn">Book Now</button>
+        </form>
+    </section>
+    
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="book.html">Booking</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section links">
+                <h3>About Odisea Travel</h3>
+                <p>Your one-stop destination for unforgettable travel experiences and adventures across Kosovo.</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook" aria-hidden="true" style="color:#d6c0b3;" ></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-twitter" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram" aria-hidden="true" style="color:#d6c0b3;"></i>
+                    
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Odisea Travel | All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -34,3 +34,9 @@ function performSearch() {
 
     resultsDiv.style.display = "block";
 }
+
+
+document.getElementById('date').addEventListener('focus', function () {
+    this.style.zIndex = 9999;
+});
+
