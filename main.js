@@ -40,3 +40,21 @@ document.getElementById('date').addEventListener('focus', function () {
     this.style.zIndex = 9999;
 });
 
+function changeIcon() {
+    var select = document.getElementById('payment');
+    var selectedOption = select.options[select.selectedIndex];
+    var iconClass = selectedOption.getAttribute('data-icon');
+    var icon = document.getElementById('payment-icon');
+    
+    icon.className = 'fa-solid ' + iconClass;
+}
+
+
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+

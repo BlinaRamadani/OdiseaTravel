@@ -38,10 +38,11 @@
     </header>
 
     <section id="booking">
-        <h2>Book Your Adventure</h2>
+        <h2>Plan Your Trip</h2>
         <form class="booking-form">
+            
             <div class="input__group">
-                <label for="activity">Choose Activity:</label>
+                <label for="activity">Select an Activity</label>
                 <select id="activity">
                     <option>Mountain Climbing</option>
                     <option>Rafting</option>
@@ -51,41 +52,60 @@
             </div>
             
             <div class="input__group">
-                <label for="persons">Number of Persons:</label>
+                <label for="persons">Number of Persons</label>
                 <input type="number" id="persons" min="1" value="1">
             </div>
     
             <div class="input__group">
-                <label for="date">Date:</label>
+                <label for="date">Select Date</label>
                 <input type="date" id="date">
             </div>
     
             <div class="input__group">
-                <label for="guide">Do you need a guide?</label>
+                <label for="guide">Guide Service</label>
                 <select id="guide">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="yes">Yes, I need a guide</option>
+                    <option value="no">No, I will explore myself</option>
                 </select>
             </div>
     
             <div class="input__group">
-                <label for="transport">Transport:</label>
+                <label for="transport">Transportation</label>
                 <select id="transport">
-                    <option value="self">I will come myself</option>
-                    <option value="agency">With agency transport</option>
+                    <option value="self">I will arrange my own transport</option>
+                    <option value="agency">Use agency transport</option>
                 </select>
             </div>
-    
             <div class="input__group">
-                <label for="payment">Payment Method:</label>
-                <select id="payment">
-                    <option value="card">Credit/Debit Card</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="cash">Cash</option>
-                </select>
+                <label for="payment">Payment Method</label>
+                <div class="payment-select">
+                    <select id="payment" onchange="changeIcon()">
+                        <option value="card" data-icon="fa-credit-card">Credit/Debit Card</option>
+                        <option value="paypal" data-icon="fa-brands fa-paypal">PayPal</option>
+                        <option value="cash" data-icon="fa-solid fa-money-bills">Cash</option>
+                    </select>
+                    <i id="payment-icon" class="fa-solid fa-credit-card"></i> <!-- Ikona që shfaqet -->
+                </div>
+            </div>
+            
+    
+            <h3>Additional Services</h3>
+    
+            <div class="extra-services">
+                <a href="flight.html" class="btn service-btn">
+                    Book a Flight
+                </a>
+    
+                <a href="hotels.html" class="btn service-btn">
+                    Find a Hotel
+                </a>
+    
+                <a href="car-rentals.html" class="btn service-btn">
+                    Rent a Car
+                </a>
             </div>
     
-            <button class="btn">Book Now</button>
+            <button class="btn book-btn">Confirm Booking</button>
         </form>
     </section>
     

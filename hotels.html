@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Heaven</title>
+    <link rel="stylesheet" href="hotels.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <div class="logo">
+            <h1>Odisea Travel</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="book.html">Booking</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="performSearch()">
+                <button class="search-button" onclick="performSearch()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+                <div id="searchResults" class="results"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-plane-departure"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section id="read-books">
+        <div class="content">
+            <h2>Start your journey into captivating stories and endless adventures here.</h2>
+            <p>Your journey into captivating stories begins here.</p>
+            <a href="contactus.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+    
+    <section id="books">
+        <div class="book-container"><br>
+          <br>  <h2>Browse by property type</h2>
+            <div class="book-row">
+                <div class="book-box" onclick="scrollToSection('hotels')">
+                    <img src="img/100.jpg" alt="Book 1">
+                    <h3>Hotels</h3>
+                </div>
+                <div class="book-box" onclick="scrollToSection('apartments')">
+                    <img src="img/190.avif" alt="Book 2">
+                    <h3>Apartments</h3>
+                </div>
+                <div class="book-box" onclick="scrollToSection('resorts')">
+                    <img src="img/23.jpg" alt="Book 3">
+                    <h3>Resorts</h3>
+                </div>
+                <div class="book-box" onclick="scrollToSection('villas')">
+                    <img src="img/25.jpg" alt="Book 4">
+                    <h3>Villas</h3><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+    <br>
+    <br><br>
+    <section id="hotels">
+        <div class="hotel-container">
+            <h2>Browse by Property Type</h2>
+            <div class="hotel-row">
+                <div class="hotel-box">
+                    <img src="img/100.jpg" alt="Hotel">
+                    <h3>Hotels</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/190.avif" alt="Apartment">
+                    <h3>Apartments</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/23.jpg" alt="Resort">
+                    <h3>Resorts</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/25.jpg" alt="Villa">
+                    <h3>Villas</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/25.jpg" alt="Villa">
+                    <h3>Villas</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+
+    <section id="villas">
+        <div class="hotel-container">
+            <h2>Browse by Property Type</h2>
+            <div class="hotel-row">
+                <div class="hotel-box">
+                    <img src="img/100.jpg" alt="Hotel">
+                    <h3>Hotels</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/190.avif" alt="Apartment">
+                    <h3>Apartments</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/23.jpg" alt="Resort">
+                    <h3>Resorts</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/25.jpg" alt="Villa">
+                    <h3>Villas</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/25.jpg" alt="Villa">
+                    <h3>Villas</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <br><br>
+    <section id="resorts">
+        <div class="hotel-container">
+            <h2>Browse by Property Type</h2><br>
+            <div class="hotel-row">
+                <div class="hotel-box">
+                    <img src="img/100.jpg" alt="Hotel">
+                    <h3>Hotels</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/190.avif" alt="Apartment">
+                    <h3>Apartments</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/23.jpg" alt="Resort">
+                    <h3>Resorts</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/25.jpg" alt="Villa">
+                    <h3>Villas</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+                <div class="hotel-box">
+                    <img src="img/25.jpg" alt="Villa">
+                    <h3>Villas</h3>
+                    <a href="#" class="hotel-btn">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<br>
+
+<section id="apartments">
+    <div class="hotel-container">
+        <h2>Browse by Property Type</h2>
+        <div class="hotel-row">
+            <div class="hotel-box">
+                <img src="img/100.jpg" alt="Hotel">
+                <h3>Hotels</h3>
+                <a href="#" class="hotel-btn">View More</a>
+            </div>
+            <div class="hotel-box">
+                <img src="img/190.avif" alt="Apartment">
+                <h3>Apartments</h3>
+                <a href="#" class="hotel-btn">View More</a>
+            </div>
+            <div class="hotel-box">
+                <img src="img/23.jpg" alt="Resort">
+                <h3>Resorts</h3>
+                <a href="#" class="hotel-btn">View More</a>
+            </div>
+            <div class="hotel-box">
+                <img src="img/25.jpg" alt="Villa">
+                <h3>Villas</h3>
+                <a href="#" class="hotel-btn">View More</a>
+            </div>
+            <div class="hotel-box">
+                <img src="img/25.jpg" alt="Villa">
+                <h3>Vias</h3>
+                <a href="viewmore.html" class="hotel-btn">View More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="book.html">Booking</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section links">
+                <h3>About Odisea Travel</h3>
+                <p>Your one-stop destination for unforgettable travel experiences and adventures across Kosovo.</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook" aria-hidden="true" style="color:#d6c0b3;" ></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-twitter" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram" aria-hidden="true" style="color:#d6c0b3;"></i>
+                    
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Odisea Travel | All rights reserved</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

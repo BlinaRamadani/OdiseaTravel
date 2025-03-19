@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea Travel</title>
+    <link rel="stylesheet" href="viewmore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+    <header>
+
+        <div class="logo">
+            <h1>Odisea Travel</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="performSearch()">
+                <button class="search-button" onclick="performSearch()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+                <div id="searchResults" class="results"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+                <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-plane-departure"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-main">
+            <img id="mainImage" src="img/hotel1.jpg" alt="Hotel">
+        </div>
+        <div class="gallery-thumbnails">
+            <img src="img/23.jpg" onclick="changeImage('img/25.jpg')">
+            <img src="img/20.jpg" onclick="changeImage('img/18.jpg')">
+            <img src="img/11.jpg" onclick="changeImage('img/l3.jpg')">
+        </div>
+    </section>
+    
+    <!-- Hotel Info Section -->
+    <section class="hotel-info">
+        <div class="container">
+            <h2>About the Hotel</h2>
+            <p>Enjoy a luxurious stay in our modern and elegant hotel. Perfect for vacations and business trips.</p>
+            <div class="price-info">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Available Rooms Section -->
+    <section class="rooms">
+        <div class="container">
+            <h2>Available Rooms</h2>
+            <div class="room">
+                <img src="img/room1.jpg" alt="Deluxe Room">
+                <div class="room-details">
+                    <h3>Deluxe Room</h3>
+                    <p>Spacious room with king-size bed, city view, and free Wi-Fi.</p>
+                    <p>Max guests: <strong>2</strong></p>
+                </div>
+                <div class="room-controls">
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="room">
+                <img src="img/room2.jpg" alt="Suite">
+                <div class="room-details">
+                    <h3>Suite</h3>
+                    <p>Luxury suite with private balcony, ocean view, and VIP service.</p>
+                    <p>Max guests: <strong>4</strong></p>
+                </div>
+                <div class="room-controls">
+                    <button>Book Now</button>
+                </div>
+            </div>
+        </div>
+        <section class="reservation">
+            <div class="container">
+                <label for="checkin">Data e hyrjes:</label>
+                <input type="date" id="checkin" onchange="calculatePrice()">
+                
+                <label for="checkout">Data e daljes:</label>
+                <input type="date" id="checkout" onchange="calculatePrice()"><br>
+        <br>
+                <label for="roomType">Lloji i dhomës:</label>
+                <select id="roomType" onchange="calculatePrice()">
+                    <option value="standard">Dhome Standard</option>
+                    <option value="luxury">Dhome Luksoze</option>
+                    <option value="twin">Dy shtreter të ndarë</option>
+                </select>
+        <br><br>
+                <p id="price">Çmimi: 0€</p>
+            </div>
+    <br>
+            <div class="room-controls">
+                <!-- Butoni për "Book Now", lidhur me faqen tjetër -->
+                <a href="book.html">
+                    <button>Book Now</button>
+                </a>
+            </div>
+        </section>
+    </section>
+    
+    
+
+    <section class="reviews">
+        <div class="container">
+            <h2>Guest Reviews</h2>
+            <div class="review">
+                <strong>John Doe:</strong>
+                <p>Amazing experience! The hotel was clean, the staff was friendly, and the view was breathtaking.</p>
+            </div>
+            <div class="review">
+                <strong>Jane Smith:</strong>
+                <p>Excellent service and comfortable rooms. Would definitely visit again.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>About Odisea Travel</h3>
+                <p>Your one-stop destination for unforgettable travel experiences and adventures across Kosovo.</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook" aria-hidden="true" style="color:#d6c0b3;" ></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-twitter" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Odisea Travel | All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+        }
+
+        function updatePrice() {
+            let nights = document.getElementById('nights').value;
+            let basePrice = 150;
+            document.getElementById('hotelPrice').textContent = basePrice * nights;
+        }
+
+        function openModal() {
+            document.getElementById('roomDetailsModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('roomDetailsModal').style.display = 'none';
+        }
+        
+        function initMap() {
+            var hotelLocation = { lat: 42.67, lng: 21.17 }; 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: hotelLocation
+            });
+            var marker = new google.maps.Marker({
+                position: hotelLocation,
+                map: map
+            });
+        }
+    </script>
+    <script src="viewmore.js"></script>
+</body>
+</html>
