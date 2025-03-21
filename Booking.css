@@ -161,12 +161,12 @@ nav {
     background-position: center;
     background-repeat: no-repeat;
     color: white;
-    padding: 203px 0;
+    padding: 150px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 12));
 }
 
 #read-book h5 {
@@ -183,27 +183,21 @@ nav {
 
 .booking {
     background-color: #E4E0E1;
-    padding: 40px 20px;
+    padding: 10px 10px;
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
     border-radius: 10px;
-    max-width: 1250px;
+    max-width: 970px;
     margin: 20px auto;
 }
 
 .container {
-    display: flex;
-    align-items: center;
+    display: flex; 
     gap: 20px;
     flex-wrap: wrap;
+   justify-content: center;
 }
 
-.image {
-    width: 290px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    max-width: 100%;
-}
+
 
 .button {
     margin-top: 20px;
@@ -276,10 +270,9 @@ nav {
     color: #493628;
 }
 
-/* Siguro që inputi i datës të ketë të njëjtën madhësi me të tjerët */
 .date-input {
     width: 100%;
-    height: 40px; /* E njëjta lartësi si inputet e tjera */
+    height: 40px; 
     padding: 5px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -287,12 +280,11 @@ nav {
     box-sizing: border-box;
 }
 
-/* Ngjit tekstin (etiketën) më lart pa ndikuar në hapjen e kalendarit */
 .form-group label {
     font-size: 14px;
     display: block;
-    margin-bottom: 2px; /* Afrojeni etiketën me inputin */
-    margin-top: -5px; /* Ngjit tekstin më lart pa ndikuar në input */
+    margin-bottom: 2px; 
+    margin-top: -5px; 
 }
 
 .search__container {
@@ -337,23 +329,18 @@ nav {
     color: #333;
 }
 
-
-
-/* Section styling */
 #categories {
     text-align: center;
     padding: 40px 15px;
-    background-color: #74a2d0;
+    background-color: #AB886D;
 }
 
-/* Section title */
 #categories h2 {
     font-size: 1.8rem;
     margin-bottom: 25px;
-    color: #333;
+    color: #E4E0E1;
 }
 
-/* Grid layout for smaller cards */
 .category-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -362,9 +349,8 @@ nav {
     margin: 0 auto;
 }
 
-/* Individual card styling */
 .category-card {
-    background: rgb(158, 73, 73);
+    background: #D6C0B3;
     border-radius: 10px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -377,7 +363,6 @@ nav {
     transform: translateY(-3px);
 }
 
-/* Smaller Image */
 .category-card img {
     width: 100%;
     height: 150px;
@@ -386,13 +371,11 @@ nav {
     border-top-right-radius: 10px;
 }
 
-/* Smaller Text */
 .category-card h3 {
     padding: 10px;
     font-size: 1rem;
     color: #333;
 }
-
 
 footer {
     background-color: #493628; 

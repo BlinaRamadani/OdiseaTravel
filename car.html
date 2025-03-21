@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea Travel</title>
+    <link rel="stylesheet" href="car.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <div class="logo">
+            <h1>Odisea Travel</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="performSearch()">
+                <button class="search-button" onclick="performSearch()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+                <div id="searchResults" class="results"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-plane-departure"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="read-books">
+        <div class="content">
+            <h2>Start your journey into captivating stories and endless adventures here.</h2>
+            <p>Your journey into captivating stories begins here.</p>
+            <a href="contactus.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="car-rental-filters">
+        <div class="filters-container">
+            <h2>Filter Cars</h2>
+            <div class="filters">
+                <select id="price-filter">
+                    <option value="all">All Prices</option>
+                    <option value="low">Low to High</option>
+                    <option value="high">High to Low</option>
+                </select>
+                <input type="text" id="search-car" placeholder="Search by car name...">
+            </div>
+        </div>
+    </section>
+    
+    <section id="car-listings">
+        <div class="car-grid" id="car-grid">
+            <!-- Cars will be dynamically added here using JavaScript -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section links">
+                <h3>About Odisea Travel</h3>
+                <p>Your one-stop destination for unforgettable travel experiences and adventures across Kosovo.</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook" aria-hidden="true" style="color:#d6c0b3;" ></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-twitter" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram" aria-hidden="true" style="color:#d6c0b3;"></i>
+                    
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Odisea Travel | All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="car.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea Travel</title>
+    <link rel="stylesheet" href="more.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+    <header>
+
+        <div class="logo">
+            <h1>Odisea Travel</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="performSearch()">
+                <button class="search-button" onclick="performSearch()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+                <div id="searchResults" class="results"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+                <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-plane-departure"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section class="gallery">
+        <div class="gallery-main">
+            <img id="mainImage" src="#" alt="">
+        </div>
+        <div class="gallery-thumbnails">
+            <img src="img/668.jpg" onclick="changeImage('img/668.jpg')">
+            <img src="img/998.jpg" onclick="changeImage('img/998.jpg')">
+            <img src="img/516.jpg" onclick="changeImage('img/516.jpg')">
+        </div>
+    </section>
+    
+    <section class="hotel-info">
+        <div class="container">
+            <h2>About the Hotel Antika</h2>
+            <p>Situated in a prime location, Hotel Antika combines traditional charm with modern comfort. 
+                Designed with elegance and warmth, our hotel offers stylish rooms, excellent amenities,
+                 and a welcoming atmosphere. Whether you're here for a relaxing stay or an adventurous 
+                 getaway, you'll enjoy top-notch hospitality, delicious cuisine, and easy access to local 
+                 attractions. Experience a perfect blend of history and luxury at Hotel Antika.</p>
+            <div class="price-info">
+
+            </div>
+        </div>
+    </section>
+    
+<section class="rooms">
+    <div class="container">
+        <h2>Available Rooms</h2>
+        <div class="room" id="deluxe-room">
+            <img src="img/room1.jpg" alt="Deluxe Room">
+            <div class="room-details">
+                <h3>Deluxe Room</h3>
+                <p>Spacious room with king-size bed, city view, and free Wi-Fi.</p>
+                <p>Max guests: <strong>2</strong></p>
+            </div>
+            <div class="room-controls">
+                <button onclick="bookRoom('deluxe-room')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="room" id="suite">
+            <img src="img/room2.jpg" alt="Suite">
+            <div class="room-details">
+                <h3>Suite</h3>
+                <p>Luxury suite with private balcony, ocean view, and VIP service.</p>
+                <p>Max guests: <strong>4</strong></p>
+            </div>
+            <div class="room-controls">
+                <button onclick="bookRoom('suite')">Book Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    
+
+    <section id="testimonials">
+        <h2>Guest Reviews</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p>"We stayed in family room-spacious,clean,heated, bright, with beautiful terrace and entrance from inner yard with pool. The staff was extremly nice and helpfull. "</p>
+                <h4>- David Miller.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"This place always feels like home to me. The staff are amazing, the rooms are cosy, the garden and pool relaxing, the food tasty."</p>
+                <h4>- Sophia Clark.</h4>                
+            </div>
+            <div class="testimonial">
+                <p>"Gorgeous property in the countryside and staff were so friendly and could not do more for you"</p>
+                <h4>- Daniel Harris.</h4>                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>About Odisea Travel</h3>
+                <p>Your one-stop destination for unforgettable travel experiences and adventures across Kosovo.</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook" aria-hidden="true" style="color:#d6c0b3;" ></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-twitter" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Odisea Travel | All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+        }
+
+        function updatePrice() {
+            let nights = document.getElementById('nights').value;
+            let basePrice = 150;
+            document.getElementById('hotelPrice').textContent = basePrice * nights;
+        }
+
+        function openModal() {
+            document.getElementById('roomDetailsModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('roomDetailsModal').style.display = 'none';
+        }
+        
+        function initMap() {
+            var hotelLocation = { lat: 42.67, lng: 21.17 }; 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: hotelLocation
+            });
+            var marker = new google.maps.Marker({
+                position: hotelLocation,
+                map: map
+            });
+        }
+    </script>
+    <script src="more.js"></script>
+</body>
+</html>

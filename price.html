@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Heaven</title>
+    <link rel="stylesheet" href="hotels.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea Travel</title>
+    <link rel="stylesheet" href="price.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <section class="reservation">
+        <div class="container">
+            <label for="checkin">Data e hyrjes:</label>
+            <input type="date" id="checkin" onchange="calculatePrice()">
+            
+            <label for="checkout">Data e daljes:</label>
+            <input type="date" id="checkout" onchange="calculatePrice()"><br>
+    <br>
+            <label for="roomType">Lloji i dhomës:</label>
+            <select id="roomType" onchange="calculatePrice()">
+                <option value="standard">Dhome Standard</option>
+                <option value="luxury">Dhome Luksoze</option>
+                <option value="twin">Dy shtreter të ndarë</option>
+            </select>
+    <br><br>
+            <p id="price">Çmimi: 0€</p>
+        </div>
+    <br>
+        <div class="room-controls">
+            <a href="book.html">
+                <button>Book Now</button>
+            </a>
+        </div>
+    </section>
+    </section>
+    <script src="more.js"></script>
+</body>
+</html>

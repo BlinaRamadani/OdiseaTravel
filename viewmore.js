@@ -25,11 +25,9 @@ function calculatePrice() {
             var diffTime = checkout - checkin;
             var diffDays = diffTime / (1000 * 3600 * 24); // Kthehet si numri i ditëve
             
-            // Çmimi për natë (mund ta bëni më të larmishëm në varësi të ditëve të javës, festave etj.)
-            var pricePerNight = 100; // Çmimi për natë
+            var pricePerNight = 100; 
             var totalPrice = diffDays * pricePerNight;
 
-            // Përditëso çmimin
             document.getElementById('price').innerText = "Çmimi: " + totalPrice + "€";
         } else {
             alert("Data e daljes duhet të jetë pas datës së hyrjes.");
@@ -38,43 +36,36 @@ function calculatePrice() {
 }
 
 function calculatePrice() {
-    // Merr datat e hyrjes dhe daljes
     var checkin = document.getElementById("checkin").value;
     var checkout = document.getElementById("checkout").value;
     
-    // Sigurohu që të dyja datat të jenë zgjedhur
     if (!checkin || !checkout) {
         document.getElementById("price").innerText = "Çmimi: 0€";
         return;
     }
 
-    // Llogarit numrin e ditëve të qëndrimit
     var checkinDate = new Date(checkin);
     var checkoutDate = new Date(checkout);
     var timeDifference = checkoutDate - checkinDate;
-    var days = timeDifference / (1000 * 3600 * 24); // Ktheni ditët
+    var days = timeDifference / (1000 * 3600 * 24); 
 
-    // Sigurohu që numri i ditëve të jetë pozitiv
     if (days <= 0) {
         document.getElementById("price").innerText = "Çmimi: 0€";
         return;
     }
 
-    // Merr llojin e dhomës dhe caktimin e çmimit përkatës
     var roomType = document.getElementById("roomType").value;
     var pricePerDay;
 
     if (roomType === "luxury") {
-        pricePerDay = 100; // Çmimi për dhomë luksoze
+        pricePerDay = 100; 
     } else if (roomType === "twin") {
-        pricePerDay = 80; // Çmimi për dy shtreter të ndarë
+        pricePerDay = 80; 
     } else {
-        pricePerDay = 60; // Çmimi për dhomë standarde
+        pricePerDay = 60; 
     }
 
-    // Llogarit çmimin total
     var totalPrice = days * pricePerDay;
 
-    // Trego çmimin total
     document.getElementById("price").innerText = "Çmimi: " + totalPrice + "€";
 }

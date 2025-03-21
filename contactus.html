@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea Travel</title>
+    <link rel="stylesheet" href="contactus.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <div class="logo">
+            <h1>Odisea Travel</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="performSearch()">
+                <button class="search-button" onclick="performSearch()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+                <div id="searchResults" class="results"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+                <ul class="nav-links">
+                <li><a href="#"><i class="fa-solid fa-plane-departure"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <form action="/action_page.php" method="post" autocomplete="off" id="contact-form">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="firstname" placeholder="Your name...">
+        
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="lastname" placeholder="Your last name...">
+        
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email address" placeholder="Your email...">
+
+        <label for="inquiry">Type of Inquiry</label>
+            <select id="inquiry" name="inquiry">
+                <option value="booking">Booking Request</option>
+                <option value="flights">Flight Information</option>
+                <option value="packages">Tour Packages</option>
+                <option value="other">Other</option>
+            </select>
+        
+            <label for="message">Message</label>
+            <textarea id="message" name="subject" placeholder="Write your message..." style="height:200px" required></textarea>
+        
+        <div class="button-container">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    
+      <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>About Odisea Travel</h3>
+                <p>Your one-stop destination for unforgettable travel experiences and adventures across Kosovo.</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook" aria-hidden="true" style="color:#d6c0b3;" ></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-twitter" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram" aria-hidden="true" style="color:#d6c0b3;"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Odisea Travel | All rights reserved</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

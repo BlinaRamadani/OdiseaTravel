@@ -166,7 +166,7 @@ nav {
 
 #booking {
     background-color: #f9f9f9;
-    background-image: url('img/55.webp'); /* Vendosni rrugën e imazhit */
+    background-image: url('img/55.webp'); 
     background-size: cover;
     background-position: center;
 }
@@ -243,120 +243,146 @@ nav {
 
 /* Seksioni kryesor */
 #booking {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #booking h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+    text-align: center;
+    color: #2d3748;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
-/* Përmirësimi i hapësirave dhe fontit */
 .booking-form {
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
-/* Përmirësimi i inputeve */
 .input__group {
-    margin-bottom: 18px;
+    margin-bottom: 1.2rem;
 }
 
 .input__group label {
     display: block;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #333;
-}
-
-.input__group select,
-.input__group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: #f8f8f8;
-}
-
-/* Stilizimi i butonave */
-.extra-services {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.service-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #0056b3;
-    color: white;
-    padding: 12px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 16px;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: background 0.3s ease-in-out;
 }
-
-.service-btn:hover {
-    background-color: #004599;
-}
-
-/* Butoni kryesor */
-.book-btn {
-    width: 100%;
-    background: #007bff;
-    color: white;
-    font-size: 17px;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
+.input__group p {
+    font-size: 1.1rem;
+    color: #2d3748;
     font-weight: 600;
-    transition: background 0.3s ease-in-out;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #f7fafc;
+    border-radius: 4px;
 }
 
-.book-btn:hover {
-    background: #0056b3;
+select, input[type="number"], input[type="date"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #4a5568;
+    background: white;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
 }
 
 .payment-select {
     position: relative;
-    display: inline-block;
-    width: 100%;
 }
 
-.payment-select select {
-    width: 100%;
-    padding: 10px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: #f8f8f8;
-}
-
-.payment-select i {
+#payment-icon {
     position: absolute;
-    right: 10px;
-    bottom: 10px; /* Poziciono ikonën në fund */
-    color: #493628; /* Ngjyra e ikonës */
-    font-size: 18px; /* Madhësia e ikonës */
-    pointer-events: none; /* Sigurohuni që ikona të mos ndikojë në funksionimin e fushës */
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #718096;
+    pointer-events: none;
+}
+
+#payment {
+    padding-right: 2.5rem;
+}
+
+h3 {
+    grid-column: 1 / -1;
+    color: #2d3748;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.extra-services {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.service-btn {
+    background-color: #ebf8ff;
+    color: #3182ce;
+    border: 1px solid #bee3f8;
+}
+
+.service-btn:hover {
+    background-color: #bee3f8;
+}
+
+.book-btn {
+    grid-column: 1 / -1;
+    background-color: #4299e1;
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.book-btn:hover {
+    background-color: #3182ce;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #booking {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
 }
 
 footer {

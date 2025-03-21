@@ -6,7 +6,7 @@
     <title>Odisea Travel</title>
     <link rel="stylesheet" href="Book.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="book.html">Booking</a></li>
+                <li><a href="#">Booking</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
             <div class="search-container">
@@ -41,6 +41,12 @@
         <h2>Plan Your Trip</h2>
         <form class="booking-form">
             
+            <div class="input__group">
+                <label for="activity">You are planning a trip to:</label>
+                <p>Rugova Canyon</p>
+            </div>
+            
+
             <div class="input__group">
                 <label for="activity">Select an Activity</label>
                 <select id="activity">
@@ -84,7 +90,7 @@
                         <option value="paypal" data-icon="fa-brands fa-paypal">PayPal</option>
                         <option value="cash" data-icon="fa-solid fa-money-bills">Cash</option>
                     </select>
-                    <i id="payment-icon" class="fa-solid fa-credit-card"></i> <!-- Ikona që shfaqet -->
+                    <i id="payment-icon" class="fa-solid fa-credit-card"></i> 
                 </div>
             </div>
             
@@ -96,11 +102,12 @@
                     Book a Flight
                 </a>
     
-                <a href="hotels.html" class="btn service-btn">
+                <a href="hotels.html" class="btn service-btn" onclick="bookHotel()">
                     Find a Hotel
                 </a>
+                
     
-                <a href="car-rentals.html" class="btn service-btn">
+                <a href="car.html" class="btn service-btn" onclick="bookcar()">
                     Rent a Car
                 </a>
             </div>
@@ -118,7 +125,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="AboutUs.html">About Us</a></li>
-                    <li><a href="book.html">Booking</a></li>
+                    <li><a href="#">Booking</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -144,7 +151,42 @@
             <p>&copy; 2024 Odisea Travel | All rights reserved</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let hotelButton = document.querySelector(".extra-services .service-btn[href='hotels.html']");
+    
+            if (hotelButton) { 
+                if (localStorage.getItem("hotelBooked") === "true") {
+                    hotelButton.style.backgroundColor = "#ff5733"; 
+                    hotelButton.textContent = "Hotel Booked"; 
+                }
+            }
+        });
+    
+        function bookHotel() {
+            localStorage.setItem("hotelBooked", "true"); 
+        }
+    </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let bookButton = document.querySelector(".extra-services .service-btn[href='car.html']");
+
+        if (bookButton) { 
+            if (localStorage.getItem("bookingConfirmed") === "true") {
+                console.log("Booking detected! Changing button."); 
+                bookButton.style.backgroundColor = "#ff5733"; 
+                bookButton.textContent = "Booking Confirmed"; 
+            }
+        }
+    });
+
+    function bookNow() {
+        localStorage.setItem("bookingConfirmed", "true"); 
+    }
+</script>
+
+    
     <script src="main.js"></script>
 </body>
 </html>

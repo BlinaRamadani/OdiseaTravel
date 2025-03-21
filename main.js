@@ -41,13 +41,12 @@ document.getElementById('date').addEventListener('focus', function () {
 });
 
 function changeIcon() {
-    var select = document.getElementById('payment');
-    var selectedOption = select.options[select.selectedIndex];
-    var iconClass = selectedOption.getAttribute('data-icon');
-    var icon = document.getElementById('payment-icon');
-    
-    icon.className = 'fa-solid ' + iconClass;
+    const payment = document.getElementById('payment');
+    const icon = document.getElementById('payment-icon');
+    const selected = payment.options[payment.selectedIndex];
+    icon.className = selected.getAttribute('data-icon');
 }
+
 
 
 function scrollToSection(sectionId) {
@@ -58,3 +57,77 @@ function scrollToSection(sectionId) {
 }
 
 
+window.onload = function () {
+    document.getElementById("contact-form").reset();
+};
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let hotelButton = document.querySelector(".extra-services .service-btn[href='hotels.html']");
+
+    if (localStorage.getItem("hotelBooked") === "true") {
+        hotelButton.style.backgroundColor = "#000"; 
+        hotelButton.textContent = "Hotel Booked"; 
+}
+});
+
+function bookHotel() {
+    localStorage.setItem("hotelBooked", "true"); 
+}
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let hotelButton = document.querySelector(".extra-services .service-btn[href='hotels.html']");
+
+        if (hotelButton) { 
+            if (localStorage.getItem("hotelBooked") === "true") {
+                hotelButton.style.backgroundColor = "#ff5733"; 
+                hotelButton.textContent = "Hotel Booked"; 
+            }
+        }
+    });
+
+    function bookHotel() {
+        localStorage.setItem("hotelBooked", "true"); 
+    }
+
+    function resetHotelBooking() {
+        localStorage.removeItem("hotelBooked");
+        window.location.reload(); 
+    }
+
+    document.getElementById("bookingForm").addEventListener("submit", function (event) {
+        event.preventDefault(); 
+    
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const pickupDate = document.getElementById("pickup-date").value;
+        const returnDate = document.getElementById("return-date").value;
+    
+        if (!name || !email || !phone || !pickupDate || !returnDate) {
+            alert("Please fill out all fields.");
+            return;
+        }
+    
+    });
+    
+    
+        document.getElementById("bookingForm").addEventListener("submit", function (event) {
+            event.preventDefault(); 
+            
+            localStorage.setItem("bookingConfirmed", "true"); 
+            
+            window.location.href = "book.html"; 
+        });
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            let bookButton = document.getElementById("bookButton");
+    
+            if (localStorage.getItem("bookingConfirmed") === "true") {
+                bookButton.style.backgroundColor = "#ff5733";
+                bookButton.textContent = "Booking Confirmed"; 
+            }
+        });
+    
+    
+    
