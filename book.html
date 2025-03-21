@@ -18,7 +18,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="#">Booking</a></li>
+                <li><a href="seemore.html">Booking</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
             <div class="search-container">
@@ -125,7 +125,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="AboutUs.html">About Us</a></li>
-                    <li><a href="#">Booking</a></li>
+                    <li><a href="seemore.html">Booking</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -184,6 +184,43 @@
     function bookNow() {
         localStorage.setItem("bookingConfirmed", "true"); 
     }
+
+
+    // Add this to handle form submission
+document.querySelector('.booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Collect form data
+    const bookingData = {
+        destination: "Rugova Canyon",
+        activity: document.getElementById('activity').value,
+        persons: document.getElementById('persons').value,
+        date: document.getElementById('date').value,
+        guide: document.getElementById('guide').value,
+        transport: document.getElementById('transport').value,
+        payment: document.getElementById('payment').value,
+        services: {
+            flight: localStorage.getItem('flightBooked') === "true",
+            hotel: localStorage.getItem('hotelBooked') === "true",
+            car: localStorage.getItem('bookingConfirmed') === "true"
+        }
+    };
+
+    // Store data and redirect
+    localStorage.setItem('currentBooking', JSON.stringify(bookingData));
+    window.location.href = 'confirmation.html';
+});
+
+// Update payment icon function
+function changeIcon() {
+    const payment = document.getElementById('payment');
+    const icon = document.getElementById('payment-icon');
+    const selected = payment.options[payment.selectedIndex];
+    icon.className = selected.getAttribute('data-icon');
+}
+
+// Initialize date input
+document.getElementById('date').min = new Date().toISOString().split('T')[0];
 </script>
 
     

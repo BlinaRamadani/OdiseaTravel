@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - Odisea Travel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .confirmation-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .confirmation-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .confirmation-header i {
+            color: #00b894;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-summary {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-title {
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .summary-value {
+            color: #636e72;
+        }
+
+        .booking-reference {
+            text-align: center;
+            padding: 1.5rem;
+            background: #0984e3;
+            color: white;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .next-steps {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .action-button {
+            padding: 1rem 2rem;
+            margin: 0 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .print-button {
+            background: #00b894;
+            color: white;
+        }
+
+        .home-button {
+            background: #0984e3;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .confirmation-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            .action-button {
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="confirmation-header">
+            <i class="fas fa-check-circle"></i>
+            <h1>Booking Confirmed! 🎉</h1>
+            <p>Your adventure to Rugova Canyon is locked in!</p>
+        </div>
+
+        <div class="booking-reference">
+            <h2>Booking Reference</h2>
+            <p id="referenceNumber">ODI-XXXXXX</p>
+        </div>
+
+        <div class="booking-summary">
+            <h2>Trip Details</h2>
+            <div class="summary-item">
+                <span class="summary-title">Destination:</span>
+                <span class="summary-value" id="destination">Rugova Canyon</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-title">Activity:</span>
+                <span class="summary-value" id="activity">Mountain Climbing</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-title">Persons:</span>
+                <span class="summary-value" id="persons">1</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-title">Date:</span>
+                <span class="summary-value" id="date">dd/mm/yyyy</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-title">Guide Service:</span>
+                <span class="summary-value" id="guide">Yes</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-title">Transportation:</span>
+                <span class="summary-value" id="transport">Self-arranged</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-title">Payment Method:</span>
+                <span class="summary-value" id="payment">Credit/Debit Card</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-title">Additional Services:</span>
+                <div class="summary-value">
+                    <span class="service-tag">Flight Booked</span>
+                    <span class="service-tag">Hotel Booked</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>What's Next?</h3>
+            <p>We've sent a confirmation email with all details. Your itinerary will be available 72 hours before departure.</p>
+            
+            <button class="action-button print-button" onclick="window.print()">
+                <i class="fas fa-print"></i> Print Confirmation
+            </button>
+            <button class="action-button home-button" onclick="window.location.href='index.html'">
+                <i class="fas fa-home"></i> Return Home
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Generate random booking reference
+        function generateReference() {
+            const prefix = 'ODI-';
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < 6; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return prefix + result;
+        }
+
+        // Load booking data from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookingData = JSON.parse(localStorage.getItem('currentBooking')) || {};
+            
+            // Populate data
+            document.getElementById('destination').textContent = bookingData.destination || 'Rugova Canyon';
+            document.getElementById('activity').textContent = bookingData.activity || 'Mountain Climbing';
+            document.getElementById('persons').textContent = bookingData.persons || 1;
+            document.getElementById('date').textContent = bookingData.date || 'dd/mm/yyyy';
+            document.getElementById('guide').textContent = bookingData.guide ? 'Yes' : 'No';
+            document.getElementById('transport').textContent = bookingData.transportation || 'Self-arranged';
+            document.getElementById('payment').textContent = bookingData.payment || 'Credit/Debit Card';
+            
+            // Generate and display reference number
+            const referenceNumber = generateReference();
+            document.getElementById('referenceNumber').textContent = referenceNumber;
+            
+            // Store in localStorage
+            if (bookingData) {
+                bookingData.bookingId = referenceNumber;
+                localStorage.setItem('currentBooking', JSON.stringify(bookingData));
+                
+                // Add to booking history
+                let bookings = JSON.parse(localStorage.getItem('bookingHistory') || '[]');
+                bookings.push(bookingData);
+                localStorage.setItem('bookingHistory', JSON.stringify(bookings));
+            }
+        });
+    </script>
+</body>
+</html>

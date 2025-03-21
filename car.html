@@ -7,6 +7,129 @@
     <link rel="stylesheet" href="car.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
+<style>
+    :root {
+        --primary-color: #2A5C82;
+        --secondary-color: #5BA4E6;
+        --accent-color: #FF7F50;
+        --text-dark: #2D3436;
+        --text-light: #F8F9FA;
+        --border-radius: 8px;
+        --transition: all 0.3s ease;
+    }
+    
+    #car-rental-filters {
+        padding: 2rem 0;
+        background: linear-gradient(to right, #f8f9fa, #ffffff);
+    }
+    
+    .filters-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        color: var(--text-dark);
+        margin-bottom: 2rem;
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+    
+    .filters-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .search-wrapper {
+        position: relative;
+    }
+    
+    #search-car {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        padding-right: 3rem;
+        border: 2px solid #e0e0e0;
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+        transition: var(--transition);
+        background: var(--text-light);
+    }
+    
+    #search-car:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 3px rgba(91, 164, 230, 0.2);
+    }
+    
+    .search-icon {
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--primary-color);
+        pointer-events: none;
+    }
+    
+    .filter-select-wrapper {
+        position: relative;
+    }
+    
+    .styled-select {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border: 2px solid #e0e0e0;
+        border-radius: var(--border-radius);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: var(--text-light);
+        font-size: 1rem;
+        color: var(--text-dark);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .styled-select:focus {
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 3px rgba(91, 164, 230, 0.2);
+    }
+    
+    .select-arrow {
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--primary-color);
+        pointer-events: none;
+    }
+    
+    @media (max-width: 768px) {
+        .filters-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+        }
+    }
+    
+    /* Add subtle animation */
+    #search-car, .styled-select {
+        transition: var(--transition);
+    }
+    
+    #search-car:hover, .styled-select:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    </style>
 <body>
     <header>
 
@@ -17,7 +140,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="#">Booking</a></li>
+                <li><a href="seemore.html">Booking</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
             <div class="search-container">
@@ -44,16 +167,23 @@
         </div>
     </section>
 
+  
     <section id="car-rental-filters">
         <div class="filters-container">
-            <h2>Filter Cars</h2>
-            <div class="filters">
-                <select id="price-filter">
-                    <option value="all">All Prices</option>
-                    <option value="low">Low to High</option>
-                    <option value="high">High to Low</option>
-                </select>
-                <input type="text" id="search-car" placeholder="Search by car name...">
+            <h2 class="section-title">Refine Your Search</h2>
+            <div class="filters-grid">
+                <div class="search-wrapper">
+                    <input type="text" id="search-car" placeholder="Search makes or models...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="filter-select-wrapper">
+                    <select id="price-filter" class="styled-select">
+                        <option value="all">Price Range</option>
+                        <option value="low">Budget (Low to High)</option>
+                        <option value="high">Premium (High to Low)</option>
+                    </select>
+                    <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -71,7 +201,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="AboutUs.html">About Us</a></li>
-                    <li><a href="#">Booking</a></li>
+                    <li><a href="seemore.html">Booking</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
                 </ul>
             </div>

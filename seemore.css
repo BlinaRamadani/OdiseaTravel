@@ -125,17 +125,17 @@ nav {
     margin-bottom: 24px;
 }
 
-
 #read-books {
-    background-image: url('img/readbook.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    color: white; 
-    padding: 170px 0; 
-    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7)); 
-    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5)); 
+    background-image: url('img/hi.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #E4E0E1;
+    padding: 170px 0;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5)); /* Adds only the shadow effect */
 }
+
+
 
 .btn {
     background-color: #493628; 

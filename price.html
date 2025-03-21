@@ -1,43 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Heaven</title>
-    <link rel="stylesheet" href="hotels.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odisea Travel</title>
-    <link rel="stylesheet" href="price.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Odisea Travel - Hotel Booking</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #5BA4E6;
+            --accent-color: #FF7F50;
+            --text-dark: #2D3436;
+            --text-light: #F8F9FA;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .reservation {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        input, select {
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(91, 164, 230, 0.2);
+        }
+
+        #price {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+        }
+
+        .room-controls {
+            text-align: center;
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .reservation {
+                padding: 1.5rem;
+            }
+
+            body {
+                padding: 1rem;
+            }
+        }
+
+        .price-highlight {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+    </style>
 </head>
 <body>
     <section class="reservation">
         <div class="container">
-            <label for="checkin">Data e hyrjes:</label>
-            <input type="date" id="checkin" onchange="calculatePrice()">
-            
-            <label for="checkout">Data e daljes:</label>
-            <input type="date" id="checkout" onchange="calculatePrice()"><br>
-    <br>
-            <label for="roomType">Lloji i dhomës:</label>
-            <select id="roomType" onchange="calculatePrice()">
-                <option value="standard">Dhome Standard</option>
-                <option value="luxury">Dhome Luksoze</option>
-                <option value="twin">Dy shtreter të ndarë</option>
-            </select>
-    <br><br>
-            <p id="price">Çmimi: 0€</p>
+            <div class="form-group">
+                <label for="checkin"><i class="fas fa-calendar-check"></i> Data e hyrjes:</label>
+                <input type="date" id="checkin" onchange="calculatePrice()">
+            </div>
+
+            <div class="form-group">
+                <label for="checkout"><i class="fas fa-calendar-times"></i> Data e daljes:</label>
+                <input type="date" id="checkout" onchange="calculatePrice()">
+            </div>
+
+            <div class="form-group">
+                <label for="roomType"><i class="fas fa-bed"></i> Lloji i dhomës:</label>
+                <div class="input-icon">
+                    <select id="roomType" onchange="calculatePrice()">
+                        <option value="standard">Dhome Standard</option>
+                        <option value="luxury">Dhome Luksoze</option>
+                        <option value="twin">Dy shtreter të ndarë</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <p id="price">Çmimi: <span class="price-highlight">0€</span></p>
         </div>
-    <br>
+
         <div class="room-controls">
             <a href="book.html">
-                <button>Book Now</button>
+                <button>Rezervo Tani</button>
             </a>
         </div>
     </section>
-    </section>
-    <script src="more.js"></script>
+
+    <script>
+        function calculatePrice() {
+            // Add your price calculation logic here
+            const priceElement = document.getElementById('price');
+            priceElement.innerHTML = `Çmimi: <span class="price-highlight">${Math.floor(Math.random() * 200) + 100}€</span>`;
+        }
+    </script>
 </body>
 </html>

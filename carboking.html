@@ -3,9 +3,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Details - Odisea Travel</title>
-    <link rel="stylesheet" href="carboking.css">
+    <title>Toyota Corolla - Odisea Travel</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --text-dark: #493628;
+            --text-light: #E4E0E1;
+            --primary-color: #2A5C82;
+            --secondary-color: #5BA4E6;
+            --accent-color: #FF7F50;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #E4E0E1;
+            color: #493628;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #493628;
+            padding: 16px 32px;
+            color: #E4E0E1;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #E4E0E1;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+        }
+        
+        .nav-links a {
+            color: #E4E0E1;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #AB886D;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 200px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 8px;
+            border: 1.5px solid #007BFF;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .search-button img {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Car Details Section */
+        #car-details {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        
+        .car-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .car-gallery {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.05);
+        }
+        
+        .car-specs {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .spec-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .spec-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .spec-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+        }
+        
+        .booking-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+        
+        .price-tag {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+        
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        input, select {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(91, 164, 230, 0.2);
+        }
+        
+        .btn-book {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-book:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #493628;
+            padding: 20px;
+            color: #c6b2b2;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        
+        .footer-section {
+            width: 30%;
+            min-width: 200px;
+            margin: 10px 0;
+        }
+        
+        .footer-section h3 {
+            color: #D6C0B3;
+            margin-bottom: 10px;
+        }
+        
+        .footer-section p, .footer-section ul {
+            color: #c6b2b2;
+        }
+        
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+        
+        .footer-section ul li a {
+            color: #c6b2b2;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #5e481e;
+            padding-top: 10px;
+            font-size: 14.4px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .car-details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-image {
+                height: 300px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .search-container {
+                width: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 10px 15px;
+            }
+            
+            .logo h1 {
+                font-size: 20px;
+            }
+            
+            .nav-links {
+                gap: 10px;
+            }
+            
+            .footer-section {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        </style>
 </head>
 <body>
     <header>
@@ -17,7 +330,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="#">Booking</a></li>
+                <li><a href="seemore.html">Booking</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
             <div class="search-container">
@@ -36,57 +349,71 @@
         </nav>
     </header>
 
+    
     <section id="car-details">
-        <div class="container">
-            <h2>Toyota Corolla</h2>
-            <div class="car-images">
-                
-                <div class="thumbnails" onclick="scrollToSection('hotels')">
-                    <img src="img/1099.avif" alt="Thumbnail 1">
-                    <img src="img/7690.avif" alt="Thumbnail 2">
-                    <img src="img/8790.avif" alt="Thumbnail 3">
+        <div class="car-details-grid">
+            <div class="car-gallery">
+                <img src="img/1099.avif" class="main-image" alt="Toyota Corolla">
+                <div class="thumbnail-grid">
+                    <img src="img/1099.avif" class="thumbnail" alt="Thumbnail 1">
+                    <img src="img/7690.avif" class="thumbnail" alt="Thumbnail 2">
+                    <img src="img/8790.avif" class="thumbnail" alt="Thumbnail 3">
                 </div>
             </div>
-            <div class="car-info">
-                <h3>Specifications</h3>
-                <ul>
-                    <li><strong>Price:</strong> $50 per day</li>
-                    <li><strong>Seats:</strong> 5</li>
-                    <li><strong>Transmission:</strong> Automatic</li>
-                    <li><strong>Fuel Type:</strong> Petrol</li>
-                    <li><strong>Mileage:</strong> 15 km/l</li>
+            <div class="car-specs">
+                <h1>Toyota Corolla 2023</h1>
+                <div class="price-tag">$50/day</div>
+
+                <ul class="spec-list">
+                    <li class="spec-item">
+                        <i class="fas fa-users spec-icon"></i>
+                        <div>
+                            <h4>5 Seats</h4>
+                            <p>Comfortable seating capacity</p>
+                        </div>
+                    </li>
+                    <li class="spec-item">
+                        <i class="fas fa-cog spec-icon"></i>
+                        <div>
+                            <h4>Automatic Transmission</h4>
+                            <p>Smooth driving experience</p>
+                        </div>
+                    </li>
+                    <li class="spec-item">
+                        <i class="fas fa-gas-pump spec-icon"></i>
+                        <div>
+                            <h4>Petrol Engine</h4>
+                            <p>15 km/l mileage</p>
+                        </div>
+                    </li>
                 </ul>
-                <h3>Description</h3>
-                <p>
-                    The Toyota Corolla is a reliable and fuel-efficient car, perfect for city drives and long trips alike.
-                    With its comfortable interior and advanced safety features, it's an excellent choice for your next journey.
-                </p>
-            </div>
-            <div class="booking-form">
-                <h3>Book Now</h3>
-                <form id="bookingForm">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pickup-date">Pickup Date</label>
-                        <input type="date" id="pickup-date" name="pickup-date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="return-date">Return Date</label>
-                        <input type="date" id="return-date" name="return-date" required>
-                    </div>
-                    <button id="bookButton" class="btn">Book Now</button>
-                </form>
+
+                <div class="booking-card">
+                    <h2>Book This Vehicle</h2>
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-group full-width">
+                            <label>Full Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pickup Date</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Return Date</label>
+                            <input type="date" required>
+                        </div>
+                        <button type="submit" class="btn-book full-width">Complete Booking</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -98,7 +425,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="AboutUs.html">About Us</a></li>
-                    <li><a href="#">Booking</a></li>
+                    <li><a href="seemore.html">Booking</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
                 </ul>
             </div>
